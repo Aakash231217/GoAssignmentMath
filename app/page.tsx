@@ -91,6 +91,7 @@ export default function LeaderboardPage() {
   const [maxAccuracy, setMaxAccuracy] = useState<number | null>(null)
   const [showFilters, setShowFilters] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     fetchLeaderboardData()
@@ -103,6 +104,14 @@ export default function LeaderboardPage() {
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
@@ -456,19 +465,28 @@ export default function LeaderboardPage() {
     <div className="min-h-screen bg-white dark:bg-gray-900 p-6 transition-colors">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="fixed top-0 left-0 right-0 z-50 h-[180px] bg-white dark:bg-gray-900">
+        <div className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 transition-all duration-300 ${isScrolled ? 'h-[80px] shadow-md' : 'h-[180px]'}`}>
           <div className="h-full flex items-center">
             <div className="max-w-7xl mx-auto w-full px-6">
               <div className="flex items-center justify-between">
-                <div className="flex flex-col gap-[4px]">
-                  <Button variant="ghost" size="icon" className="text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 -ml-3 mb-2 rounded-full">
-                    <ArrowLeft className="h-5 w-5" />
-                  </Button>
-                  <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">Leaderboard</h1>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
-                    JEE Main Test series / Quant Part Test / Quant Part Test (QPT) - 1 (Old) / Analysis / Leaderboard
+                {isScrolled ? (
+                  <div className="flex items-center gap-4">
+                    <Button variant="ghost" size="icon" className="text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
+                      <ArrowLeft className="h-5 w-5" />
+                    </Button>
+                    <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">Leaderboard</h1>
                   </div>
-                </div>
+                ) : (
+                  <div className="flex flex-col gap-[4px]">
+                    <Button variant="ghost" size="icon" className="text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 -ml-3 mb-2 rounded-full">
+                      <ArrowLeft className="h-5 w-5" />
+                    </Button>
+                    <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">Leaderboard</h1>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      JEE Main Test series / Quant Part Test / Quant Part Test (QPT) - 1 (Old) / Analysis / Leaderboard
+                    </div>
+                  </div>
+                )}
                 <div className="flex items-center gap-3">
                   {/* Search */}
                   <div className="relative w-64">
@@ -497,7 +515,7 @@ export default function LeaderboardPage() {
         </div>
         
         {/* Spacer for fixed header */}
-        <div className="h-[180px]"></div>
+        <div className={`transition-all duration-300 ${isScrolled ? 'h-[80px]' : 'h-[180px]'}`}></div>
 
         {/* Filter Panel - Modern Dropdown */}
         {showFilters && (
