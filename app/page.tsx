@@ -699,19 +699,20 @@ export default function LeaderboardPage() {
                       }}
                     >
                       <div className="flex flex-col items-center text-center h-full">
-                        <div className="relative mb-3">
+                        <div className="relative mb-8">
                           <Avatar className="h-16 w-16">
                             <AvatarImage src={student.avatar || "/placeholder.svg"} alt={student.name} />
                             <AvatarFallback className="bg-[#b5b7c0] text-white">{student.name.charAt(0)}</AvatarFallback>
                           </Avatar>
-                          <div className="absolute -bottom-1 -right-1">
-                            <svg width="13" height="34" viewBox="0 0 13 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              {/* Ribbon */}
-                              <path d="M1 10 L1 34 L6.5 30 L12 34 L12 10" fill="#FF9500"/>
-                              {/* Medal */}
-                              <circle cx="6.5" cy="6.5" r="6" fill="#FFB800" stroke="#FF8500" strokeWidth="0.5"/>
-                              {/* Number 1 */}
-                              <text x="6.5" y="9.5" fill="white" fontSize="8" fontWeight="bold" textAnchor="middle" fontFamily="Arial">1</text>
+                          <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2">
+                            <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              {/* Left Ribbon crossing to right */}
+                              <path d="M6 0 L20 16" stroke="#55ACEE" strokeWidth="4" />
+                              {/* Right Ribbon crossing to left */}
+                              <path d="M20 0 L6 16" stroke="#55ACEE" strokeWidth="4" />
+                              {/* Medal Circle */}
+                              <circle cx="13" cy="16" r="8" fill="#FFB800" />
+                              <text x="13" y="20" fill="white" fontSize="10" fontWeight="bold" textAnchor="middle">1</text>
                             </svg>
                           </div>
                         </div>
@@ -786,13 +787,21 @@ export default function LeaderboardPage() {
                       }}
                     >
                       <div className="flex flex-col items-center text-center h-full">
-                        <div className="relative mb-3">
+                        <div className="relative mb-8">
                           <Avatar className="h-16 w-16">
                             <AvatarImage src={student.avatar || "/placeholder.svg"} alt={student.name} />
                             <AvatarFallback className="bg-[#b5b7c0] text-white">{student.name.charAt(0)}</AvatarFallback>
                           </Avatar>
-                          <div className="absolute -bottom-1 -right-1 bg-[#94A3B8] rounded-full p-1">
-                            <Medal className="h-3 w-3 text-white" />
+                          <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2">
+                            <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              {/* Left Ribbon crossing to right */}
+                              <path d="M6 0 L20 16" stroke="#55ACEE" strokeWidth="4" />
+                              {/* Right Ribbon crossing to left */}
+                              <path d="M20 0 L6 16" stroke="#55ACEE" strokeWidth="4" />
+                              {/* Medal Circle */}
+                              <circle cx="13" cy="16" r="8" fill="#94A3B8" />
+                              <text x="13" y="20" fill="white" fontSize="10" fontWeight="bold" textAnchor="middle">2</text>
+                            </svg>
                           </div>
                         </div>
                         <h3 className="font-bold text-[#1d2933] dark:text-white text-sm mb-1">{student.name}</h3>
@@ -866,13 +875,21 @@ export default function LeaderboardPage() {
                       }}
                     >
                       <div className="flex flex-col items-center text-center h-full">
-                        <div className="relative mb-3">
+                        <div className="relative mb-8">
                           <Avatar className="h-16 w-16">
                             <AvatarImage src={student.avatar || "/placeholder.svg"} alt={student.name} />
                             <AvatarFallback className="bg-[#b5b7c0] text-white">{student.name.charAt(0)}</AvatarFallback>
                           </Avatar>
-                          <div className="absolute -bottom-1 -right-1 bg-[#FF8B00] rounded-full p-1">
-                            <Award className="h-3 w-3 text-white" />
+                          <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2">
+                            <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              {/* Left Ribbon crossing to right */}
+                              <path d="M6 0 L20 16" stroke="#55ACEE" strokeWidth="4" />
+                              {/* Right Ribbon crossing to left */}
+                              <path d="M20 0 L6 16" stroke="#55ACEE" strokeWidth="4" />
+                              {/* Medal Circle */}
+                              <circle cx="13" cy="16" r="8" fill="#FF8B00" />
+                              <text x="13" y="20" fill="white" fontSize="10" fontWeight="bold" textAnchor="middle">3</text>
+                            </svg>
                           </div>
                         </div>
                         <h3 className="font-bold text-[#1d2933] dark:text-white text-sm mb-1">{student.name}</h3>
