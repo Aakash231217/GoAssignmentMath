@@ -459,39 +459,37 @@ export default function LeaderboardPage() {
         <div className="fixed top-0 left-0 right-0 z-50 h-[180px] bg-white dark:bg-gray-900">
           <div className="h-full flex items-center">
             <div className="max-w-7xl mx-auto w-full px-6">
-              <div className="flex flex-col gap-[16px]">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="icon" className="text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                      <ArrowLeft className="h-5 w-5" />
-                    </Button>
-                    <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">Leaderboard</h1>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    {/* Search */}
-                    <div className="relative w-64">
-                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-[#5b6480] dark:text-gray-400" />
-                      <input
-                        type="text"
-                        placeholder="Search student..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 border border-[#b5b7c0] dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-[#1d2933] dark:text-gray-100 placeholder-[#5b6480] dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#432dd7] text-sm"
-                      />
-                    </div>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => setShowFilters(!showFilters)}
-                      className="text-[#5b6480] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    >
-                      <Filter className="h-5 w-5" />
-                    </Button>
-                    <ThemeToggle />
+              <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-[4px]">
+                  <Button variant="ghost" size="icon" className="text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 -ml-3 mb-2 rounded-full">
+                    <ArrowLeft className="h-5 w-5" />
+                  </Button>
+                  <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">Leaderboard</h1>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    JEE Main Test series / Quant Part Test / Quant Part Test (QPT) - 1 (Old) / Analysis / Leaderboard
                   </div>
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 ml-12">
-                  JEE Main Test series / Quant Part Test / Quant Part Test (QPT) - 1 (Old) / Analysis / Leaderboard
+                <div className="flex items-center gap-3">
+                  {/* Search */}
+                  <div className="relative w-64">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-[#5b6480] dark:text-gray-400" />
+                    <input
+                      type="text"
+                      placeholder="Search student..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-10 pr-4 py-2 border border-[#b5b7c0] dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-[#1d2933] dark:text-gray-100 placeholder-[#5b6480] dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#432dd7] text-sm"
+                    />
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setShowFilters(!showFilters)}
+                    className="text-[#5b6480] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  >
+                    <Filter className="h-5 w-5" />
+                  </Button>
+                  <ThemeToggle />
                 </div>
               </div>
             </div>
