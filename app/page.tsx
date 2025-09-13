@@ -453,28 +453,19 @@ export default function LeaderboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 p-6 transition-colors">
+    <div className="min-h-screen bg-white dark:bg-gray-900 p-6 transition-colors">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div 
-          className="fixed top-0 left-0 right-0 z-50 h-[180px] border-b dark:border-gray-700"
-          style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-            borderBottomColor: '#E5E7EB',
-            borderBottomWidth: '1px'
-          }}
-        >
-          <div className="dark:bg-gray-900/80 h-full flex items-center backdrop-blur-xl">
+        <div className="fixed top-0 left-0 right-0 z-50 h-[180px] bg-white dark:bg-gray-900">
+          <div className="h-full flex items-center">
             <div className="max-w-7xl mx-auto w-full px-6">
               <div className="flex flex-col gap-[16px]">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="icon" className="text-[#5b6480] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <Button variant="ghost" size="icon" className="text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
                       <ArrowLeft className="h-5 w-5" />
                     </Button>
-                    <h1 className="text-2xl font-semibold text-[#1d2933] dark:text-gray-100">Leaderboard</h1>
+                    <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">Leaderboard</h1>
                   </div>
                   <div className="flex items-center gap-3">
                     {/* Search */}
@@ -499,7 +490,7 @@ export default function LeaderboardPage() {
                     <ThemeToggle />
                   </div>
                 </div>
-                <div className="text-sm text-[#5b6480] dark:text-gray-400 ml-12">
+                <div className="text-sm text-gray-600 dark:text-gray-400 ml-12">
                   JEE Main Test series / Quant Part Test / Quant Part Test (QPT) - 1 (Old) / Analysis / Leaderboard
                 </div>
               </div>
