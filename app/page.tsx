@@ -313,7 +313,7 @@ export default function LeaderboardPage() {
                 const rank8Data = data.data.results.find((s: LeaderboardEntry) => s.rank === 8)
                 if (rank8Data) {
                   const subjects = defaultSubjectConfigs.map(config => {
-                    const subjectData = rank8Data.subjects?.find(s => s.subjectId.title === config.name) || { totalMarkScored: 0 }
+                    const subjectData = rank8Data.subjects?.find((s: { subjectId: { title: string } }) => s.subjectId.title === config.name) || { totalMarkScored: 0 }
                     return {
                       name: config.shortName,
                       score: Math.round(subjectData.totalMarkScored),
